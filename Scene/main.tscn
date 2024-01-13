@@ -1,0 +1,114 @@
+[gd_scene load_steps=5 format=3 uid="uid://b72rph45hlpgh"]
+
+[ext_resource type="Script" path="res://Runtime/UICaptionBar.cs" id="1_bskvn"]
+[ext_resource type="Texture2D" uid="uid://lndkd1bl5rr8" path="res://Textures/ui_icon_close.png" id="1_fpbqv"]
+[ext_resource type="Texture2D" uid="uid://dat1r0thc6ejh" path="res://Textures/ui_icon_minimize.png" id="1_l7dq4"]
+[ext_resource type="Texture2D" uid="uid://cwsro8ml54l6i" path="res://Textures/ui_icon_restore.png" id="2_rfanu"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MainWindow" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/MainWindow"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 31.0
+grow_horizontal = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MainWindow/PanelContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+color = Color(0.0313726, 0.164706, 0.298039, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MainWindow/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MainWindow/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/MainWindow/PanelContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+text = "File"
+
+[node name="Button2" type="Button" parent="CanvasLayer/MainWindow/PanelContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+text = "Edit"
+
+[node name="Button3" type="Button" parent="CanvasLayer/MainWindow/PanelContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+text = "Help"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MainWindow/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="CaptionBar" type="MarginContainer" parent="CanvasLayer/MainWindow/PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer" node_paths=PackedStringArray("_filler")]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("1_bskvn")
+_filler = NodePath("Filler")
+
+[node name="Filler" type="Control" parent="CanvasLayer/MainWindow/PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer/CaptionBar"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MainWindow/PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(21, 21)
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Minimize" type="TextureButton" parent="CanvasLayer/MainWindow/PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_l7dq4")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/MainWindow/PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(21, 21)
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Restore" type="TextureButton" parent="CanvasLayer/MainWindow/PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("2_rfanu")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/MainWindow/PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(21, 21)
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Close" type="TextureButton" parent="CanvasLayer/MainWindow/PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer3"]
+layout_mode = 2
+texture_normal = ExtResource("1_fpbqv")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Control" type="Control" parent="CanvasLayer/MainWindow/PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
